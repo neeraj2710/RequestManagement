@@ -98,6 +98,7 @@ public class LoginControllerServlet extends HttpServlet {
             }
             else{
                 UserProfile.setUsername(username);
+                UserProfile.setDepartment(req.getParameter("department"));
 //                System.out.println("HI");
 //                System.out.println(req.getParameter("department"));
                 if(req.getParameter("department").equalsIgnoreCase("legal")){

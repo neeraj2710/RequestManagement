@@ -1,6 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
+<%@ page import="java.util.List" %>
+<%@ page import="pojo.RequestPojo" %><%--
+  Created by IntelliJ IDEA.
+  User: asus
+  Date: 10-05-2024
+  Time: 00:40
+  To change this template use File | Settings | File Templates.
+--%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<html>
 <head>
+    <title>Title</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Table with Buttons</title>
@@ -15,7 +24,6 @@
     </style>
 </head>
 <body>
-
 <div class="container mt-5">
     <h2>Table with Buttons</h2>
     <table class="table">
@@ -35,22 +43,22 @@
         </tr>
         </thead>
         <tbody>
+        <%
+            List<RequestPojo> rList=(List<RequestPojo>) request.getAttribute("rList");
+            for(RequestPojo r:rList) {
+        %>
         <tr>
-            <td><input type="text" value="1" size="5" disabled></td>
-            <td><input type="text" value="Sample title" size="10" disabled></td>
-            <td><input type="text" value="discription" size="10" disabled></td>
-            <td><input type="text" value="raised by" size="10" disabled></td>
-            <td><input type="text" value="Date" size="10" disabled></td>
-            <td><input type="text" value="IT" size="10" disabled></td>
-            <td><input type="text" value="aproval date" size="10" disabled></td>
-            <td><input type="text" value="Manager" size="10" disabled></td>
-            <td>
-                <div class="btn-group btn-block" role="group">
-                    <button class="btn btn-success btn-sm"><i class="fas fa-check"></i> Approve</button>
-                    <button class="btn btn-danger btn-sm"><i class="fas fa-times"></i> Deny</button>
-                </div>
-            </td>
+            <td><%=r.getSno() %></td>
+            <td><%=r.getTitle()%></td>
+            <td><%=r.getDescription()%></td>
+            <td><%=r.getRaisedBy()%></td>
+            <td><%=r.getRequestDate()%></td>
+            <td><%=r.getDepartment()%></td>
+            <td><%=r.getApprovalDate()%></td>
+            <td><%=r.getApprovedBy()%></td>
+            <td><%=r.getStatus()%></td>
         </tr>
+        <%}%>
         <!-- More rows can be added here -->
         </tbody>
     </table>
