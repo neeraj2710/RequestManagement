@@ -25,7 +25,7 @@
 </head>
 <body>
 <div class="container mt-5">
-    <h2>Table with Buttons</h2>
+    <h2>Pending Requests</h2>
     <table class="table">
         <thead class="thead-dark">
         <tr>
